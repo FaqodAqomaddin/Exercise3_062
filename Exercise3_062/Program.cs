@@ -14,4 +14,10 @@ namespace Exercise_Linked_List_C
         public Node next;
         public Node prev;
     }
+    class DoubleLinkedList
+    {
+        Node START;
+
+        //constructor
+    }
 }
