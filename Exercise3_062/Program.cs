@@ -118,6 +118,7 @@ namespace Exercise_Linked_List_C
             else
                 return false;
         }
+        //pengurutan dari yang terkecil ke yang terbesar
         public void ascending()
         {
             if (listEmpty())
@@ -128,6 +129,29 @@ namespace Exercise_Linked_List_C
                 Node currentNode;
                 for (currentNode = START; currentNode != null; currentNode = currentNode.next)
                     Console.Write(currentNode.noMhs + currentNode.next.name + "\n");
+            }
+        }
+        //pengurutan dari yang terbesar ke yang terkecil
+        public void descending()
+        {
+            if (listEmpty())
+                Console.WriteLine("n\List is Empty");
+            else
+            {
+                Console.WriteLine("\nRecord in the descending order of" + "Roll number are:\n");
+                Node currentNode;
+                //membawa currentNode ke Node paling belakang
+                currentNode = START;
+                while (currentNode != null)
+                {
+                    currentNode = currentNode.next;
+                }
+                //Membaca data dari last node ke first node
+                while (currentNode != null)
+                {
+                    Console.Write(currentNode.noMhs + " " + currentNode.name + "\n");
+                    currentNode = currentNode.prev;
+                }
             }
         }
     }
