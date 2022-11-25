@@ -47,6 +47,33 @@ namespace Exercise_Linked_List_C
                 START = newNode;
                 return;
             }
+            /*if the node is to be inserted at between two Node*/
+            Node previous, current;
+            for (current = previous = START;
+                current != null && nim >= current.noMhs;
+                previous = current, current = current.next)
+            {
+                if (nim == current.noMhs)
+                {
+                    Console.WriteLine("\nDuplicate roll numbers not allowed");
+                    return;
+                }
+            }
+            /*on the execution of the above for loop, prev and
+             * current will point to thoose nodes
+             * between which the new node is to be inserted*/
+            newNode.next = current;
+            newNode.prev = previous;
+
+            //if the node is to be inserted at the end of the list
+            if (current == null)
+            {
+                newNode.next = null;
+                previous.next = newNode;
+                return;
+            }
+            current.prev = newNode;
+            previous.next = newNode;
         }
     }
 }
